@@ -130,7 +130,15 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
 <link rel="icon" href="https://skyward.themerex.net/wp-content/uploads/2023/07/cropped-favicon-192x192.jpg" sizes="192x192">
 <link rel="apple-touch-icon" href="https://skyward.themerex.net/wp-content/uploads/2023/07/cropped-favicon-180x180.jpg">
 <meta name="msapplication-TileImage" content="https://skyward.themerex.net/wp-content/uploads/2023/07/cropped-favicon-270x270.jpg">
-<script>function setREVStartSize(e){
+<script>
+	window.onload = function() {
+    var height = document.body.scrollHeight;
+    window.parent.postMessage({ action: "setHeight", height: height }, "https://domain-of-your-parent-page");
+};
+
+	
+	
+	function setREVStartSize(e){
 			//window.requestAnimationFrame(function() {
 				window.RSIW = window.RSIW===undefined ? window.innerWidth : window.RSIW;
 				window.RSIH = window.RSIH===undefined ? window.innerHeight : window.RSIH;
